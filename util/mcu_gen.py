@@ -435,7 +435,7 @@ def main():
     if ram_numbanks_il != 0 and bus_type == 'onetoM':
         exit("bus type must be 'NtoM' instead 'onetoM' to access the interleaved memory banks in parallel" + str(args.bus))
 
-    if ram_numbanks_cont + ram_numbanks_il < 2 and ram_numbanks_cont + ram_numbanks_il > 16:
+    if ram_numbanks_cont + ram_numbanks_il < 2 or ram_numbanks_cont + ram_numbanks_il > 16:
         exit("ram numbanks must be between 2 and 16 instead of " + str(ram_numbanks_cont + ram_numbanks_il))
     else:
         ram_numbanks = ram_numbanks_cont + ram_numbanks_il
